@@ -11,8 +11,8 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->get('/api', function () use ($router) {
+    return '<h1>API desenvolvida para identificação de queda. TCC CPS</h1>';
 });
 $router->group(['prefix' => 'api'], function () use ($router) {
 
