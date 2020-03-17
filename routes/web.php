@@ -10,9 +10,11 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-
+$router->get('/',function(){
+    return redirect('/api');
+});
 $router->get('/api', function () use ($router) {
-    return '<h1>API desenvolvida para identificação de queda. TCC CPS</h1>';
+    return '<h1>API desenvolvida para identificação de queda. TCC CPS.</h1>';
 });
 $router->group(['prefix' => 'api'], function () use ($router) {
 
