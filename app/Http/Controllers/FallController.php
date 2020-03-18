@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-
-class FallController {
+class FallController
+{
     public function getFall(Request $request)
     {
         $eixoX = pow($request->x, 2);
@@ -14,8 +13,9 @@ class FallController {
         $eixoZ = pow($request->z, 2);
 
         $aceleracao = sqrt($eixoX * $eixoY * $eixoZ);
-        $aceleracao /= 9.8 *9.8;
-        return $aceleracao;
+        $data['aceleracao'] = $aceleracao / 9.8;
+        return response()
+            ->json($data, 200);
 
     }
 }
