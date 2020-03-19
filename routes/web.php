@@ -18,8 +18,9 @@ $router->get('/api', function () use ($router) {
 });
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('/ola', function () use ($router) {
+        $data['aceleracao'] = 0;
         return response()
-    ->json("Você consegui acessar a API", 200);
+            ->json($data, 200);
     });
     $router->post('/ola', 'FallController@getFall');
     $router->post('/queda', 'FallController@getFall');
