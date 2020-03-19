@@ -17,6 +17,10 @@ $router->get('/api', function () use ($router) {
     return '<h1>API desenvolvida para identificação de queda. TCC CPS.</h1>';
 });
 $router->group(['prefix' => 'api'], function () use ($router) {
-
+    $router->get('/ola', function () use ($router) {
+        return response()
+    ->json("Você consegui acessar a API", 200);
+    });
+    $router->post('/ola', 'FallController@getFall');
     $router->post('/queda', 'FallController@getFall');
 });
